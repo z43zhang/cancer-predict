@@ -67,6 +67,7 @@ if st.button("Predict"):
     shap_values = explainer(input_transformed)
 
     # Plot waterfall and display in Streamlit
-    fig, ax = plt.subplots(figsize=(8, 6))
     shap.plots.waterfall(shap_values[0], max_display=6, show=False)
+    fig = plt.gcf()  # Get current figure created by SHAP
     st.pyplot(fig)
+
