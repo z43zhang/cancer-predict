@@ -1,7 +1,6 @@
 # app.py
 import streamlit as st
 import numpy as np
-np.bool = bool
 
 import pandas as pd
 import joblib
