@@ -61,7 +61,7 @@ if st.button("Predict"):
     st.subheader("🔍 SHAP Feature Contribution")
 
     # Use model and feature names for explainer
-    explainer = shap.LinearExplainer(model, input_transformed, feature_names=preprocessor.get_feature_names_out())
+    explainer = shap.LinearExplainer(model, input_transformed, feature_names = [f"feature_{i}" for i in range(input_transformed.shape[1])])
 
     shap_values = explainer(input_transformed)
 
